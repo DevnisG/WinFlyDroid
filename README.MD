@@ -1,19 +1,6 @@
 # WinFlyDroid  
 *Transfiere archivos entre Windows y Android de manera sencilla y rápida*
 
-## Tabla de Contenidos
-- [Introducción](#introducción)
-- [Características](#características)
-- [Requisitos Previos](#requisitos-previos)
-- [Cómo se Utiliza](#cómo-se-utiliza)
-- [Preguntas Frecuentes](#preguntas-frecuentes)
-- [Contribuciones](#contribuciones)
-- [Donaciones](#donaciones)
-- [Historial de Versiones](#historial-de-versiones)
-- [Contacto](#contacto)
-- [Licencia](#licencia)
-
----
 
 ## Introducción
 **WinFlyDroid** es un proyecto de código abierto bajo licencia MIT, gratuito y diseñado para facilitar la transferencia de archivos entre dispositivos Windows y Android de forma rápida, segura y sin complicaciones. Este proyecto es ideal tanto para usuarios finales como para desarrolladores interesados en colaborar o integrar su funcionalidad.
