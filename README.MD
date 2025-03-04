@@ -28,8 +28,7 @@
 
 ### En Windows
 1. **Descarga e Instalación:**  
-   Descarga la versión compilada desde la web:  
-   [WinFlyDroid Download Web](https://download-wfd.netlify.app)
+   Descarga la versión compilada desde la web: [WinFlyDroid Download Web](https://download-wfd.netlify.app)
 2. **Ejecución:**  
    Al iniciar la aplicación en Windows, se mostrará la IP donde se lanza la API, el "Sesion Pass" y un código QR que contiene estos datos.
 
@@ -77,12 +76,6 @@
 
 ## Donaciones
 Si deseas apoyar el desarrollo de **WinFlyDroid**, considera realizar una donación. Tu aporte es fundamental para seguir mejorando la herramienta. En breve se añadirá más información sobre métodos de donación (PayPal, criptomonedas, etc.).
-
----
-
-## Historial de Versiones
-- **v1.0:** Lanzamiento inicial con funcionalidades básicas de transferencia de archivos y API integrada.  
-*(Las futuras actualizaciones se documentarán en esta sección.)*
 
 ---
 
