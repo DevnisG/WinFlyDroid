@@ -1,0 +1,40 @@
+{
+  "name": "winflydroid",
+  "version": "1.0.0",
+  "description": "App para enviarse archivos entre Windows y Android",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "axios": "^1.5.0",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "other-dependencies": "...",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "electron": "^34.3.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.ejemplo.winFlyDroid",
+    "productName": "WinFlyDroid",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico",
+      "compression": "maximum"
+    },
+    "extraFiles": [
+      {
+        "from": "./api.exe",
+        "to": "api.exe"
+      },
+      {
+        "from": "./_internal",
+        "to": "_internal"
+      }
+    ]
+  }
+}

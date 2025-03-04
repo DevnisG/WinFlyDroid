@@ -1,0 +1,22 @@
+{
+    "name": "WinFlyDroid",
+    "short_name": "WinFlyDroid",
+    "description": "Intercambia archivos entre tu PC y tu móvil fácilmente.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#2f3951",
+    "icons": [
+      {
+        "src": "assets/icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/logo.webp",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

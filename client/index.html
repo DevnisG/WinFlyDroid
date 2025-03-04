@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="assets/icon.ico" type="image/x-icon">
+  <title>WinFlyDroid Client</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div class="container">
+    <div id="loginSection" class="glass-panel login-panel">
+      <div class="app-header">
+        <img src="assets/logo.webp" alt="Logo">
+        <h1>WinFlyDroid</h1>
+      </div>
+      <input type="text" id="serverIP" placeholder="IP del servidor (ej. 192.168.0.106)">
+      <input type="password" id="serverPass" placeholder="Contraseña">
+      <div class="login-buttons">
+        <button onclick="startQRScanner()"><i class="bi bi-qr-code-scan"></i> Escanear QR</button>
+        <button onclick="manualLogin()"><i class="bi bi-box-arrow-in-right"></i> Ingresar</button>
+        <button id="notify-button">Permitir Notificaicones</button>
+      </div>
+      <div id="qrScannerContainer">
+        <div class="qr-buttons">
+          <button class="button button-danger" onclick="stopQRScanner()"><i class="bi bi-x-circle"></i> Cerrar escáner</button>
+        </div>
+        <div id="qr-reader" style="width: 100%; margin-top:1rem;"></div>
+      </div>
+    </div>
+    <div id="mainInterface" class="glass-panel" style="display:none;">
+      <div class="app-header-files">
+        <img src="assets/logo.webp" alt="Logo">
+        <h2>WinFlyDroid</h2>
+      </div>
+      <div class="drag-drop-zone" id="dropZone">
+        <input type="file" id="fileInput" multiple hidden>
+        <span><i class="bi bi-cloud-arrow-up"></i> Toca aquí para seleccionar archivos</span>
+      </div>
+      <div class="upload-queue" id="uploadQueue" style="display:none;">
+        <p><strong>Archivos pendientes:</strong></p>
+        <ul id="queueList"></ul>
+        <button class="button button-primary" style="display: block; margin: 0 auto;" onclick="uploadFiles()">
+          <i class="bi bi-cloud-arrow-up"></i> Subir archivos
+        </button>
+      </div>
+      <div class="file-list">
+        <div class="file-header-row">
+          <h2>Archivos disponibles</h2>
+          <button class="button button-primary" onclick="refreshFiles()">
+            <i class="bi bi-arrow-clockwise"></i> Actualizar lista
+          </button>
+        </div>
+        <div id="filesContainer"></div>
+      </div>
+      <footer class="app-footer">
+        <div class="footer-content">
+          <span id="status">Conectando...</span>
+          <button class="shutdown-button" onclick="shutdown()">
+            <i class="bi bi-power"></i>
+          </button>
+        </div>
+        <div class="footer-copy">
+            WinFlyDroid © 2025. Distribuido bajo la licencia MIT. Consulte el archivo LICENSE para más detalles.
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div id="spinner" style="display: none;">
+    <div class="spinner"></div>
+  </div>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js")
+        .then(() => console.log("Service Worker registrado."))
+        .catch((error) => console.log("Error al registrar el Service Worker:", error));
+}
+</script>
+</body>
+</html>
+

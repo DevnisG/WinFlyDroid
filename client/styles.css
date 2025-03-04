@@ -1,0 +1,461 @@
+:root {
+  --primary: #2f3951; 
+  --accent: #55687a; 
+  --error: #e63946; 
+  --background: #1d1f29; 
+  --surface: rgba(47, 57, 81, 0.25); 
+  --text: #f0f0f0;
+  --input-bg: rgba(47, 57, 81, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #2f3951, #55687a);
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.notify-button {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary);
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+.notify-button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+.glass-panel {
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.app-header img {
+  height: 50px;
+  margin-right: 10px;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.app-header-files {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.app-header-files img {
+  height: 40px;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+}
+
+.app-header-files h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.login-buttons,
+.file-header-row,
+.qr-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.login-panel input {
+  width: 100%;
+  max-width: 400px;
+  background: var(--input-bg);
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.login-panel input:focus {
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.login-panel button {
+  background: var(--primary);
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-panel button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+#qrScannerContainer {
+  margin-top: 1rem;
+  display: none;
+}
+
+#mainInterface {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 2rem);
+}
+
+.drag-drop-zone {
+  position: relative;
+  border: 2px dashed var(--primary);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.drag-drop-zone:hover {
+  background: rgba(13, 110, 253, 0.15);
+  transform: scale(1.02);
+}
+
+.drag-drop-zone input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+
+.upload-queue {
+  background: var(--input-bg);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.upload-queue p {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.upload-queue ul {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+.upload-queue li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.upload-queue li:last-child {
+  border-bottom: none;
+}
+
+.file-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.file-item {
+  background: var(--input-bg);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.file-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.file-header,
+.file-details,
+.file-actions {
+  margin-bottom: 0.5rem;
+}
+
+.file-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.file-details {
+  font-size: 0.9rem;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.file-details span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.file-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.button {
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.button-primary:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+.button-danger {
+  background: var(--error);
+  color: #fff;
+}
+
+.button-danger:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+.small-button {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+#spinner {
+  position: fixed;
+}
+
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.2);
+  border-top: 8px solid var(--primary);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.upload-progress {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  background: rgb(38 44 59 / 25%);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+#spinner .spinner {
+  position: relative;
+}
+
+#spinner::after {
+  content: "Procesando...";
+  position: absolute;
+  top: calc(50% + 40px);
+  color: white;
+  font-weight: 500;
+}
+
+.app-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.shutdown-button {
+  width: 40px;
+  height: 40px;
+  background: var(--error);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.shutdown-button:hover {
+  background: var(--accent);
+  transform: scale(1.1);
+}
+
+.toast {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--surface);
+  backdrop-filter: blur(5px);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease;
+  z-index: 1000;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .app-header h1,
+  .app-header-files h2 {
+    font-size: 1.5rem;
+  }
+  .file-list {
+    grid-template-columns: 1fr;
+  }
+  .login-panel input {
+    max-width: 100%;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
