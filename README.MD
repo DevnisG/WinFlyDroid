@@ -89,7 +89,13 @@ Este proyecto está licenciado bajo la Licencia MIT.
 
 ## Vista Previa de WinFlyDroid
 
-[PC_QR](data/_readme/imgs/wfd-pc-qr.png)
-[PC_UI](data/_readme/imgs/wfd-pc.png)
-[PHONE_QR](data/_readme/imgs/wfd-phone-qr.jpg)
-[PHONE_UI](data/_readme/imgs/wfd-phone.jpg)
+**WinFlyDroid Server:**
+[PC_QR](data/_readme/imgs/wfd_pc_qr.png)
+
+[PC_UI](data/_readme/imgs/wfd_pc.png)
+---
+
+**WinFlyDroid Client:**
+[PHONE_QR](data/_readme/imgs/wfd_phone-qr.jpg)
+
+[PHONE_UI](data/_readme/imgs/wfd_phone.jpg)
