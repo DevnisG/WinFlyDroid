@@ -74,11 +74,6 @@
 
 ---
 
-## Donaciones
-Si deseas apoyar el desarrollo de **WinFlyDroid**, considera realizar una donación. Tu aporte es fundamental para seguir mejorando la herramienta. En breve se añadirá más información sobre métodos de donación (PayPal, criptomonedas, etc.).
-
----
-
 ## Contacto
 Este proyecto fue desarrollado por **@DevnisG**. Para dudas, sugerencias o soporte, contáctame a través de:
 - **Correo electrónico:** denis.gontero.20000@gmail.com
