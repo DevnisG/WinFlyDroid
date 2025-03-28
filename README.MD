@@ -57,7 +57,7 @@
 
 ## Contribuciones
 **WinFlyDroid** es un proyecto colaborativo y se agradecen todas las aportaciones. Para contribuir:
-1. Realiza un fork del repositorio (si está disponible en plataformas como GitHub).
+1. Realiza un fork del repositorio.
 2. Crea una rama para la nueva funcionalidad o corrección:
    ```
    git checkout -b feature/nueva-caracteristica
